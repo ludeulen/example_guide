@@ -1,0 +1,32 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//어노테이션 자동완성
+	implementation 'org.projectlombok:lombok:1.18.22'
+	//DB 연결
+	implementation 'mysql:mysql-connector-java'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//HTML+Java
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	//Springboot
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//JSON
+	implementation 'org.json:json:20190722'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
